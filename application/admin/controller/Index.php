@@ -1,10 +1,11 @@
 <?php
 namespace app\admin\controller;
 
-class Index
+class Index extends Controller
 {
     public function index()
     {
-        return "nihap";
+//        $this->view->engine->layout("layout");
+        return view("index");
     }
 }
