@@ -1,11 +1,15 @@
 <?php
 namespace app\admin\controller;
 
-class Index extends Controller
+
+class Index
 {
     public function index()
     {
-//        $this->view->engine->layout("layout");
-        return view("index");
+        return view( 'index',
+            [
+                'title'  => "控制台",
+                'ctitle' => "首页"
+            ]);
     }
 }

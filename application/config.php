@@ -54,7 +54,7 @@ return [
     // +----------------------------------------------------------------------
 
     // 默认模块名
-    'default_module'         => 'index',
+    'default_module'         => 'admin',
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
@@ -140,21 +140,11 @@ return [
         'taglib_begin' => '{',
         // 标签库标签结束标记
         'taglib_end'   => '}',
-
-        'layout_on'     =>  true,
-
-        'layout_name'   =>  'layout',
-
-
     ],
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__ADMIN__'         => '/static/admin/',
-        '__ATEMPLATE__'      => '/static/admin/template',
-        '__AONESELF__'       => '/static/admin/oneself',
-        '__STATIC__'        => '/static/',
-        '__INDEX__'         => '/static/index/',
+        '__ATEMPLATE__' => "/static/admin/template"
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',

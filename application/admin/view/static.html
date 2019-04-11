@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title></title>
+
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="shortcut icon" type="image/x-icon" href="/web.ico">
+    <!--<link rel="stylesheet" href="__ONESELF__/css/style.css"  />-->
+    <!--<link rel="stylesheet" type="text/css" href="__FONT__/css/font-awesome.min.css">-->
+    <link rel="stylesheet" type="text/css" href="__ATEMPLATE__/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__ATEMPLATE__/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- page specific plugin styles -->
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="__ATEMPLATE__/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="__ATEMPLATE__/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="__ATEMPLATE__/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="__ATEMPLATE__/css/ace-rtl.min.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="__ATEMPLATE__/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="__ATEMPLATE__/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="__ATEMPLATE__/js/html5shiv.min.js"></script>
+    <script src="__ATEMPLATE__/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="no-skin">
+
+{__CONTENT__}
+</body>
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="__ATEMPLATE__/js/jquery-2.1.4.min.js"></script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="__ATEMPLATE__/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='__ATEMPLATE__/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+
+<script src="__ATEMPLATE__/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="__ATEMPLATE__/js/excanvas.min.js"></script>
+<![endif]-->
+<script src="__ATEMPLATE__/js/jquery-ui.custom.min.js"></script>
+<script src="__ATEMPLATE__/js/jquery.ui.touch-punch.min.js"></script>
+<script src="__ATEMPLATE__/js/jquery.easypiechart.min.js"></script>
+<script src="__ATEMPLATE__/js/jquery.sparkline.index.min.js"></script>
+
+<script src="__ATEMPLATE__/js/jquery.dataTables.min.js"></script>
+<script src="__ATEMPLATE__/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="__ATEMPLATE__/js/dataTables.buttons.min.js"></script>
+<!-- <script src="__ATEMPLATE__/js/jquery.flot.min.js"></script>
+ <script src="__ATEMPLATE__/js/jquery.flot.pie.min.js"></script>
+ <script src="__ATEMPLATE__/js/jquery.flot.resize.min.js"></script>
+-->
+<!-- ace scripts -->
+<script src="__ATEMPLATE__/js/ace-elements.min.js"></script>
+<script src="__ATEMPLATE__/js/ace.min.js"></script>
+
+<!--<script type="text/javascript" src="__LAYER__/layer.js"></script>-->
+<!--<script type="text/javascript" src="__LAYER__/laydate/laydate.js"></script>-->
+<script type="text/javascript" src="__ATEMPLATE__/js/jquery-1.11.0.min.js"></script>
+
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    jQuery(function($) {
+        $('.easy-pie-chart.percentage').each(function(){
+            var $box = $(this).closest('.infobox');
+            var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+            var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
+            var size = parseInt($(this).data('size')) || 50;
+            $(this).easyPieChart({
+                barColor: barColor,
+                trackColor: trackColor,
+                scaleColor: false,
+                lineCap: 'butt',
+                lineWidth: parseInt(size/10),
+                animate: ace.vars['old_ie'] ? false : 1000,
+                size: size
+            });
+        })
+
+        $('.sparkline').each(function(){
+            var $box = $(this).closest('.infobox');
+            var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
+            $(this).sparkline('html',
+                {
+                    tagValuesAttribute:'data-values',
+                    type: 'bar',
+                    barColor: barColor ,
+                    chartRangeMin:$(this).data('min') || 0
+                });
+        });
+
+
+        //Android's default browser somehow is confused when tapping on label which will lead to dragging the task
+        //so disable dragging when clicking on label
+        var agent = navigator.userAgent.toLowerCase();
+        if(ace.vars['touch'] && ace.vars['android']) {
+            $('#tasks').on('touchstart', function(e){
+                var li = $(e.target).closest('#tasks li');
+                if(li.length == 0)return;
+                var label = li.find('label.inline').get(0);
+                if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
+            });
+        }
+
+    })
+</script>
+</html>

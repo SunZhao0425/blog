@@ -16,10 +16,10 @@ return [
     // 定义demo模块的自动生成 （按照实际定义的文件名生成）
     'demo'     => [
         '__file__'   => ['common.php'],
-        '__dir__'    => ['behavior', 'controller', 'model', 'index'],
+        '__dir__'    => ['behavior', 'controller', 'model', 'view'],
         'controller' => ['Index', 'Test', 'UserType'],
         'model'      => ['User', 'UserType'],
-        'index'       => ['index/index'],
+        'view'       => ['index/index'],
     ],
     // 其他更多的模块定义
 ];
