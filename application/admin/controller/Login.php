@@ -7,9 +7,17 @@
  */
 namespace app\admin\controller;
 
-class Login 
+use think\Controller;
+
+class Login extends Controller
 {
     public function index(){
-        return 1;
+
+        $this->view->engine->layout(false);
+        return view( 'index',
+            [
+                'title'  => "控制台",
+                'ctitle' => "首页"
+            ]);
     }
 }
