@@ -22,7 +22,6 @@ class User
     {
         $ctitle = "用户列表";
         $alluser = $this->Umodel->select();
-        print_r($alluser);die;
         return view( 'index',
             [
                 'title'  => $this->title,

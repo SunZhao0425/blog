@@ -8,6 +8,8 @@
 
 namespace app\admin\model;
 
+use think\Model;
+
 class User extends Model
 {
     //自定义初始化

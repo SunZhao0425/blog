@@ -7,7 +7,7 @@
  */
 namespace app\admin\controller;
 
-class Login 
+class Login
 {
     public function index(){
         return 1;
