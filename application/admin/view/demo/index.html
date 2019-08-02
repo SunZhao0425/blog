@@ -1,0 +1,146 @@
+<style>
+/* 表格样式 */
+    .goods-list{
+        width: 600px;
+        height: 200px;
+        border: 1px solid #333;
+        border-collapse: collapse;/*边框会合并为一个单一的边框*/
+        font-family: 'Microsoft Yahei';
+    }
+    .goods-list th ,.goods-list td{
+        border: 1px solid #333; /*边框*/
+        text-align: center;  /*字体居中*/
+    }
+    .goods-list th{
+        background-color: #3366cc;
+        color: #FFF; /*字体颜色*/
+    }
+
+    /* 盒子模型
+        元素在页面中显示成一个方块.类似盒子
+
+    */
+
+    .my-box{
+        /*基本属性*/
+        width: 200px;
+        height: 200px;
+        background-color: gold;
+        /*边框属性*/
+        /*border-top-width: 10px;*/
+        /*border-top-color: #000;*/
+        /*!* 实线:solid  虚线 dashed  点线 dotted*!*/
+        /*border-top-style: solid;*/
+
+        /*border-top: 10px solid #000;*/
+        /*border-bottom: 10px dashed #000;*/
+        /*border-left: 10px dotted #000;*/
+        /*border-right: 10px solid #000;*/
+
+        border: 10px solid #000;
+        /*!*padding-top: 20px; !*文字距顶部边框的距离*!*!*/
+        /*!*分别设置: 上(20px) 左右(100px) 下(200px)*!*/
+        /*padding: 200px 100px 200px;*/
+        /*!*分别设置: 上下(20px) 左右(100px)*!*/
+        /*padding: 20px 100px;*/
+        /*同时设置四边 上右下左*/
+        padding: 50px;
+        /*margin:  30px;*/
+        /*外边距合并
+        解决:
+            设置一边的外边距
+            将元素浮动或者定位
+        */
+        /*水平居中*/
+        margin: 0 auto;
+    }
+
+    /*盒子尺寸
+       尺寸计算:
+        盒子的宽度: width + 左右的padding值 + 左右的border值
+        盒子的高度: height+ 左右的padding值 + 左右的border值
+    */
+    .box1,.box2,.box3{
+        width: 50px;
+        height: 50px;
+        background-color: gold;
+        margin: 20px;
+    }
+    .box2,.box3{
+       border: 50px solid #000;
+    }
+    .box3{
+        padding: 50px;
+    }
+    /*.top,.down{*/
+    /*    width: 400px;*/
+    /*    !*height: 1px;*!*/
+    /*    border: 1px solid #000;*/
+    /*}*/
+    /*.top{*/
+    /*    border: 1px solid #f00;*/
+    /*}*/
+    /*.down{*/
+    /*    border: 1px solid #666;*/
+    /*}*/
+    /*.content{*/
+
+    /*    font-family: "Microsoft Yahei";*/
+
+    /*    padding: 17px 17px ;*/
+    /*}*/
+
+    .content{
+        color:#333;
+        width: 385px;
+        /*height: 35px;*/
+        /*font-family: "Microsoft Yahei";*/
+        font-size: 20px;
+        border-top: 1px solid #f00;
+        border-bottom: 3px solid #000;
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+
+
+</style>
+<div>
+<!--    新闻标题-->
+    <div class="top"></div>
+    <div class="content">新闻标题</div>
+    <div class="down"></div>
+
+
+<!--    <div class="box1">1</div>-->
+<!--    <div class="box2">2</div>-->
+<!--    <div class="box3">3</div>-->
+
+
+<!--    <table class="goods-list">-->
+<!--        <tr>-->
+<!--            <th>1</th>-->
+<!--            <th>1</th>-->
+<!--            <th>1</th>-->
+<!--            <th>1</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--            <td>1</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--    <br>-->
+<!--    <div class="my-box">-->
+<!--        所得到的多多付-->
+<!--        所得到的多多付-->
+<!--        所得到的多多付-->
+<!--    </div>-->
+
+</div>
